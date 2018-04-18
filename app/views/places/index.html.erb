@@ -7,4 +7,7 @@
     <p><%= place.description %> <br />
   </div>
 <% end %>
-<h2><%= @places.inspect %></h2>
+
+<div class="pagination col-10 offset-1">
+  <%= will_paginate @places, :page_links => false %>
+</div>
