@@ -83,4 +83,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #DEVISE GEM SETUP
+  config.action_mailer.default_url_options = { host: 'nomster-seth-brown.herokuapp.com'}
 end
