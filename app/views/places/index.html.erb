@@ -1,13 +1,26 @@
 <h1> Welcome to my Awesome Web App</h1>
 
+<!--  -->
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
     <h1><%= place.name %></h1>
     <i><%= place.address %></i> <br />
     <p><%= place.description %> <br />
+
+    <!-- if a place has a user, then add the email of the user on the index page -->
+    <% if place.user.present? %>
+      <small><%= place.user.email %></small> <br />
+      <small><%= place.user_id %></small>
+    <% end %>
+
   </div>
 <% end %>
 
+
+
+
+<!-- Pagination functionality -->
 <div class="pagination col-10 offset-1">
   <%= will_paginate @places, :page_links => false %>
 </div>
+
