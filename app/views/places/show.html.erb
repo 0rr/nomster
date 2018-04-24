@@ -6,4 +6,12 @@
   <h1><%= @place.address %></h1>
   <br /><br />
   <h1><%= @place.description %></h1>
+
+  <!-- <br /> -->
+
+  <div class="float-right">
+    <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
+  </div>
+  
 </div>
+
