@@ -73,4 +73,10 @@ gem "font-awesome-rails"
 #devise (user authentication) gem
 gem 'devise'
 
+#geocoding gem
+gem 'geocoder'
+
+#figaro gem
+gem 'figaro'
+
 
