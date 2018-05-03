@@ -5,7 +5,7 @@ class PlacesController < ApplicationController
   def index
     #Store all places in database in variable called @places
     #Also paginate
-    @places = Place.paginate(:page => params[:page], :per_page => 2)
+    @places = Place.paginate(:page => params[:page], :per_page => 4)
   end
 
   def new
@@ -16,7 +16,7 @@ class PlacesController < ApplicationController
     @place = current_user.places.create(place_params)
 
     if @place.valid?
-      redirect_to root_path
+      redirect_to place_path(@place)
     else
       render :new, status: :unprocessable_entity
     end
@@ -44,7 +44,7 @@ class PlacesController < ApplicationController
     @place.update_attributes(place_params)
 
     if @place.valid?
-      redirect_to root_path
+      redirect_to place_path(@place)
     else
       render :edit, status: :unprocessable_entity
     end
