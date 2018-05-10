@@ -13,6 +13,12 @@
       <small><%= place.user_id %></small>
     <% end %>
 
+    <br />
+
+    <% if place.photos.present? %>
+         <%= image_tag place.photos.first.picture %>
+    <% end %>
+
     <% if place.comments.present? %>
       <div class="col-12">
         <blockquote>
