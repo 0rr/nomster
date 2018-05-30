@@ -10,7 +10,7 @@
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   margin-top: 10px;
   margin-bottom: 15px;
-  padding: 20px;
+  padding: 20px; 
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -107,6 +107,11 @@ blockquote p {
 
 .carousel{
   box-shadow: 0px 3px 8px #2a2a2a;
+}
+
+.pad-0{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 
