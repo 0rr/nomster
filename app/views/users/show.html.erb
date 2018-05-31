@@ -1,6 +1,6 @@
 <h1> User Dashboard </h1>
 
-<div class="booyah-box">
+<div class="booyah-box margin-20px">
   <div class="row">
     <div class="col-4">
       <%= image_tag 'user2.png' %>
@@ -34,3 +34,42 @@
       </div>
   <% end %>
 </div>
+
+<div class="clear"></div>
+
+<br /><br />
+<h1 class="text-center"> My Places </h1>
+<br /><br />
+
+<% @user.places.each do |place| %>
+  <div class="booyah-box col-10 offset-1">
+  <h1><%= link_to place.name, place_path(place) %></h1>
+  <i><%= place.address %></i> <br />
+  <p><%= place.description %> <br />
+
+  <!-- if a place has a user, then add the email of the user on the index page -->
+  <% if place.user.present? %>
+    <small><%= place.user.email %></small> <br />
+    <!-- <small><%= place.user_id %></small> -->
+  <% end %>
+
+  <br />
+
+  <% if place.photos.present? %>
+       <%= image_tag place.photos.first.picture %>
+  <% end %>
+
+  <% if place.comments.present? %>
+    <div class="col-12">
+      <blockquote>
+        <% if place.comments.last.humanized_rating.present? %>
+          <b><%= place.comments.last.humanized_rating %></b> -
+        <% end %>
+        <%= place.comments.last.message %>
+        <small><%= place.comments.last.user.email %></small>
+      </blockquote>
+    </div>
+  <% end %>
+</div>
+<% end %>
+
