@@ -119,4 +119,13 @@ blockquote p {
   margin-right: 20px;
 }
 
+#image-container{
+    max-height: 300px;
+    width: 100%; /*can be in percentage also.*/
+/*    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;*/
+}
+
 

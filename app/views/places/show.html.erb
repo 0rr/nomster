@@ -122,12 +122,13 @@
 
   <div class="row">
     <% @place.photos.each do |photo| %>
-      <div class="col-10 offset-1 col-sm-6">
+    <div class="booyah-box col-10 offset-1 col-sm-6">
         <% if photo.present? %>
             <%= image_tag photo.picture %>
+            <br />
             <%= photo.caption %>
         <% end %>
-      </div>
+    </div>
     <% end %>
   </div>
 
